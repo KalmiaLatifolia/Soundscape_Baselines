@@ -60,8 +60,9 @@ Full table: `data/site_metadata.csv`
 
 
 ## Data structure
-The complete dataset is too large for easy upload/download, so it has been stored as separate files for each index and country.
+The complete dataset is too large to be stored on Github, but enough data to generate the main figures of the manuscript has been stored as separate files for each index and country.
 Data files are in the "data" folder.
+To access the data in a larger, more raw format, please go to the Zenodo data repository:
 
 **Average Day Files**
 
