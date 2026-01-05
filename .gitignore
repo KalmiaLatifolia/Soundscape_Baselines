@@ -55,6 +55,9 @@ rsconnect/
 .RData
 .Rproj.user/
 
+# IOS
+.DS_Store
+
 # Data files and folders
 data/
 raw_data/
