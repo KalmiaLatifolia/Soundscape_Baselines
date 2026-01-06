@@ -149,7 +149,7 @@ points_sf <- st_as_sf(points_df, coords = c("lon","lat"), crs=4326,remove=FALSE)
 # Create bounding box
 ext <- st_as_sfc(st_bbox( c(
   xmin = 13, xmax = 13.5, 
-  ymin = 48.9,    ymax = 49.2), 
+  ymin = 48.95,    ymax = 49.2), 
   crs = 4326))
 
 
@@ -182,7 +182,7 @@ points_sf <- st_as_sf(points_df, coords = c("lon","lat"), crs=4326,remove=FALSE)
 
 # Create bounding box
 ext <- st_as_sfc(st_bbox( c(
-  xmin = -71.5, xmax = -71.35, 
+  xmin = -71.48, xmax = -71.35, 
   ymin = -12.9,    ymax = -12.8), 
   crs = 4326))
 
@@ -200,7 +200,7 @@ points_sf <- st_as_sf(points_df, coords = c("lon","lat"), crs=4326,remove=FALSE)
 # Create bounding box
 ext <- st_as_sfc(st_bbox( c(
   xmin = 13.2, xmax = 13.3, 
-  ymin = 0.62,    ymax = 0.7), 
+  ymin = 0.63,    ymax = 0.71), 
   crs = 4326))
 
 
@@ -217,7 +217,7 @@ points_sf <- st_as_sf(points_df, coords = c("lon","lat"), crs=4326,remove=FALSE)
 
 # Create bounding box
 ext <- st_as_sfc(st_bbox( c(
-  xmin = -10.95, xmax = -10.8, 
+  xmin = -10.95, xmax = -10.82, 
   ymin = 7.6,    ymax = 7.7), 
   crs = 4326))
 
@@ -269,11 +269,11 @@ basemaps::set_defaults(ext = ext_3857)
 
 #plot it
 ggplot() +
-  basemap_gglayer(ext_3857, map_service = "esri", map_type = "world_imagery") +
+  basemap_gglayer(ext_3857, map_service = "esri", map_type = "world_imagery", force=TRUE) +
   scale_fill_identity() + 
   geom_sf(data = sites_3857, color = "white", size = 3) +
   #geom_sf_text(data = sites_3857, aes(label = name), color = "white", size = 2.5, nudge_y = 1000) +
-  annotation_scale(location = "bl", width_hint = 0.2) +
+  annotation_scale(location = "bl", width_hint = 0.2, line_col = "white", text_col = "white") +
   annotation_north_arrow(location = "tl", which_north = "true",
                          style = north_arrow_fancy_orienteering) +
   coord_sf(xlim = st_bbox(ext_3857)[c("xmin", "xmax")],
@@ -283,5 +283,7 @@ ggplot() +
   xlab("") +
   ylab("")
 
+attr(basemap_gglayer(ext_3857, map_service = "esri", map_type = "world_imagery", force=TRUE), "attribution")
 
+ggsave("SingMap.pdf", height=3, width=5)
 
