@@ -1,8 +1,8 @@
 # SoundscapeBaselines
-This repository contains data and code to accompany the manuscript **Acoustic indices reveal fundamental differences in daily phenology of tropical and temperate forest soundscapes**
+This repository contains code to accompany the manuscript **Acoustic indices reveal fundamental differences in daily phenology of tropical and temperate forest soundscapes**
 
 ## Available Data
-This repository contains acoustic indices calculated from approximatly one month of continuous audio data from forests around the world.
+This repository uses acoustic indices calculated from approximatly one month of continuous audio data from forests around the world.
 The indices power minus noise (PMN), acoustic complexity index (ACI), inverse acoustic entropy (ENT), and acoustic events (EVN) are present for all sites.
 Acoustic indices were calculated using the QUT Ecoacoustics Analysis Programs (https://ap.qut.ecoacoustics.info/).
 
@@ -59,15 +59,28 @@ Full table: `data/site_metadata.csv`
 </details>
 
 
+## Data storage
+The complete data set is too large to be stored on Github.
+To access the data, please go to the Zenodo data repository:
+
 ## Data structure
-The complete dataset is too large to be stored on Github, but enough data to generate the main figures of the manuscript has been stored as separate files for each index and country.
-Data files are in the "data" folder.
-To access the data in a larger, more raw format, please go to the Zenodo data repository:
+
 
 **Average Day Files**
 
 Files with "avgDay" in their names have averaged together all the days and sites of each country. These data were used to generate false-color spectrogram figures showing typical soundscapes of each country. 
-These files follow the naming convention "index_country_startDate_endDate.RDS" and have a 1-minute temporal resolution across a 24-hour period, and a 43.1 Hz frequency resolution ranging from 0.2155 kHz to 10.6888 kHz. 
+These files follow the naming convention "index_avgDay.csv" and have a 1-minute temporal resolution across a 24-hour period, and a 43.1 Hz frequency resolution ranging from 0.2155 kHz to 10.6888 kHz. 
+
+| Variable | Description |
+|----------|-------------|
+| Time | Time of day in POSIXct format with 1-minute resolution. POSIXct is a date-timeformat, but this variable records only time, so the same arbitrary date is used for all values. |
+| Frequency | Frequency in Hz |
+| avgACI | Average Acoustic Complexity Index. Averaged across days and sites of the same country, frequency, and time. |
+| avgENT | Average Inverse Entropy Index. Averaged across days and sites of the same country, frequency, and time. |
+| avgEVN | Average Acoustic Events. Averaged across days and sites of the same country, frequency, and time. |
+| avgPMN | Average Power Minus Noise. Averaged across days and sites of the same country, frequency, and time. |
+| Country | Country where the audiowas recorded |
+| Realm | Biogeographic realm according to Dinerstein et al. 2017 |
 
 **10-minute Files**
 
