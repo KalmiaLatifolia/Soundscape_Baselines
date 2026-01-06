@@ -61,7 +61,7 @@ Full table: `data/site_metadata.csv`
 
 ## Data storage
 The complete data set is too large to be stored on Github.
-To access the data, please go to the Zenodo data repository:
+To access the data, please go to the Zenodo data repository: DOI: 10.5281/zenodo.18165143 
 
 ## Data structure
 
@@ -73,13 +73,13 @@ These files follow the naming convention "index_avgDay.csv" and have a 1-minute 
 
 | Variable | Description |
 |----------|-------------|
-| Time | Time of day in POSIXct format with 1-minute resolution. POSIXct is a date-timeformat, but this variable records only time, so the same arbitrary date is used for all values. |
+| Time | Time of day in POSIXct format with 1-minute resolution. POSIXct is a date-time format, but this variable records only time, so the same arbitrary date is used for all values. |
 | Frequency | Frequency in Hz |
 | avgACI | Average Acoustic Complexity Index. Averaged across days and sites of the same country, frequency, and time. |
 | avgENT | Average Inverse Entropy Index. Averaged across days and sites of the same country, frequency, and time. |
 | avgEVN | Average Acoustic Events. Averaged across days and sites of the same country, frequency, and time. |
 | avgPMN | Average Power Minus Noise. Averaged across days and sites of the same country, frequency, and time. |
-| Country | Country where the audiowas recorded |
+| Country | Country where the audio was recorded |
 | Realm | Biogeographic realm according to Dinerstein et al. 2017 |
 
 **10-minute Files**
