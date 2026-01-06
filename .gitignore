@@ -73,5 +73,6 @@ outputs/
 figures/
 models/
 *.rds
+*.html
 
 
