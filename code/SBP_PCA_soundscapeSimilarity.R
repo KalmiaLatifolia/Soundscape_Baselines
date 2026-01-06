@@ -22,7 +22,7 @@ setwd("/Users/lauraberman/Library/CloudStorage/OneDrive-NationalUniversityofSing
 
 # read in data (vroom MUCH faster than read.csv) -------------------------------
 
-indices_10min <- vroom("data/PCAinput_allIndices_allCountries_10minAvg.csv", col_select = -1)
+indices_10min <- vroom("data/zenodo/PCAinput_allIndices_allCountries_10minAvg.csv", col_select = -1)
 
 # choose country subset --------------------------------------------------------(options) 
 # run the version of this line with the country set you want
@@ -172,7 +172,7 @@ fviz_pca_ind(pca_nocturnal_result,
 ################################################################################
 
 # load site details ------------------------------------------------------------
-siteDetails <- vroom("data/Table1_site_details.csv")
+siteDetails <- vroom("data/zenodo/Table1_site_details.csv")
 
 # convert date format
 siteDetails$StartDate <- dmy(siteDetails$StartDate)
