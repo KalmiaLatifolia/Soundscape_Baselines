@@ -55,7 +55,6 @@ Acoustic indices were calculated using the QUT Ecoacoustics Analysis Programs (h
 | Singapore | Sungei Buloh Wetland Reserve | SBWR | 1.441586 | 103.735308 | 23 June 2020 | 08 July 2020 | 15 | 16 kHz |
 
 
-Full table: `data/site_metadata.csv`
 </details>
 
 
@@ -88,11 +87,37 @@ The file "PCAinput_allIndices_allCountries_10minAvg.csv" was used for PCA analys
 
 | Variable | Description |
 |----------|-------------|
-| frequency | Frequency in Hz
+| frequency | Frequency in Hz |
 | Time_10min | Time rounded to the nearest 10 minutes. A period object in the format hh:mm:ss |
 | ACI | Average Acoustic Complexity Index. Averaged across days of the same site, country, frequency, and time |
 | ENT |Average Inverse Entropy Index. Averaged across days of the same site, country, frequency, and time |
 | EVN |Average Acoustic Events Index. Averaged across days of the same site, country, frequency, and time |
 | PMN |Average Power Minus Noise. Averaged across days of the same site, country, frequency, and time |
-| Site | Site where the audio was recorded |
+| Site | Site where the audio was recorded. Coordinates are in metadata |
 | Country | Country where the audio was recorded |
+
+
+**Representative samples (audio)**
+
+Some representative examples of audio from each ecoregion have been provided. Audio samples match those visualized in Figure S3 of the supplementary materials. A single day from a single site from each ecoregion has been selected, and four audio files have been provided for each: one from dawn, one from noon, one from dusk, and one at night.
+
+Audio files follow the naming convention "Site_yyyymmdd_hhmmss.wav", where the date and time are the start time of the recording. Each recording is 30-minutes long.
+
+
+## Code
+
+The provided code is sufficient to regenerate all the figures of the manuscript using the data archived on zenodo (10.5281/zenodo.18165143).
+Code for earlier steps in data analysis are also provided for the sake of transparency, but intermediate and unfinalized datasets have not been archived.
+
+| R Script | Purpose |
+|----------|---------|
+| preprocessingPCA.R | data cleaning, reformatting, averaging |
+| Figure1_map.R | generate Figure 1 |
+| SBP_PCA_soundscapeSimilarity.R | run PCA, generate Figures 2, S1, S2 |
+| RGB_panel_plot.R | generate Figure 3 |
+| PMN_panel_plot.R | generate Figure 4 |
+| Figure 5.R | generate Figure 5 |
+
+
+
+
