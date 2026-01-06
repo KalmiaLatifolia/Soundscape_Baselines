@@ -82,7 +82,17 @@ These files follow the naming convention "index_avgDay.csv" and have a 1-minute 
 | Country | Country where the audio was recorded |
 | Realm | Biogeographic realm according to Dinerstein et al. 2017 |
 
-**10-minute Files**
+**10-minute PCA Files**
 
-Files with the naming convention "AllIndices_SiteAvg_10min_ForPCA_country.csv" were used for PCA analysis and differ from the average day files in that they have a 10-minute temporal resolution.
+The file "PCAinput_allIndices_allCountries_10minAvg.csv" was used for PCA analysis and differs from the average day files in that it has a 10-minute temporal resolution and separate values for each site.
 
+| Variable | Description |
+|----------|-------------|
+| frequency | Frequency in Hz
+| Time_10min | Time rounded to the nearest 10 minutes. A period object in the format hh:mm:ss |
+| ACI | Average Acoustic Complexity Index. Averaged across days of the same site, country, frequency, and time |
+| ENT |Average Inverse Entropy Index. Averaged across days of the same site, country, frequency, and time |
+| EVN |Average Acoustic Events Index. Averaged across days of the same site, country, frequency, and time |
+| PMN |Average Power Minus Noise. Averaged across days of the same site, country, frequency, and time |
+| Site | Site where the audio was recorded |
+| Country | Country where the audio was recorded |
