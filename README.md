@@ -60,7 +60,7 @@ Acoustic indices were calculated using the QUT Ecoacoustics Analysis Programs (h
 
 ## Data storage
 The complete data set is too large to be stored on Github.
-To access the data, please go to the Zenodo data repository: DOI: 10.5281/zenodo.18165143 
+To access the data, please go to the Zenodo data repository: DOI: 10.5281/zenodo.18165143 (https://doi.org/10.5281/zenodo.18165143) 
 
 ## Data structure
 
