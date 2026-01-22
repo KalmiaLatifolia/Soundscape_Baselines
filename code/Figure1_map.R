@@ -107,6 +107,8 @@ ggsave("Figure1_map_202050516.PDF", height=7, width=15)
 # Inset maps
 ################################################################################
 
+# last updated 22 Jan 2026
+
 # Packages
 library(ggplot2)
 library(sf)
@@ -259,6 +261,7 @@ ext <- st_as_sfc(st_bbox( c(
 
 # MAP IT -----------------------------------------------------------------------
 
+basemaps::flush_cache()
 
 # Transform to EPSG:3857 (Web Mercator)
 ext_3857 <- st_transform(ext, 3857)
@@ -269,7 +272,7 @@ basemaps::set_defaults(ext = ext_3857)
 
 #plot it
 ggplot() +
-  basemap_gglayer(ext_3857, map_service = "esri", map_type = "world_imagery", force=TRUE) +
+  basemap_gglayer(ext_3857, map_service = "esri", map_type = "world_imagery") +
   scale_fill_identity() + 
   geom_sf(data = sites_3857, color = "white", size = 3) +
   #geom_sf_text(data = sites_3857, aes(label = name), color = "white", size = 2.5, nudge_y = 1000) +
@@ -281,9 +284,11 @@ ggplot() +
            expand = FALSE) +
   theme(legend.position = "none") +
   xlab("") +
-  ylab("")
+  ylab("") +
+  scale_x_continuous(breaks=c(seq(st_bbox(ext)["xmin"], st_bbox(ext)["xmax"], by=0.05))) +
+  scale_y_continuous(breaks=c(seq(st_bbox(ext)["ymin"], st_bbox(ext)["ymax"], by=0.02)))
 
-attr(basemap_gglayer(ext_3857, map_service = "esri", map_type = "world_imagery", force=TRUE), "attribution")
 
-ggsave("SingMap.pdf", height=3, width=5)
+
+ggsave("EcuMap.png", height=2, width=4)
 
