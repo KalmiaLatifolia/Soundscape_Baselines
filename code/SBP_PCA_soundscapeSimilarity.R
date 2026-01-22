@@ -3,7 +3,7 @@
 # Soundscape Baselines PCA of soundscape similarity
 # one row per SITE
 # created 3 April 2025
-# last updated 5 January 2026
+# last updated 22 January 2026
 
 library(tidyverse)
 library(FactoMineR)
@@ -94,8 +94,9 @@ fviz_pca_ind(pca_result,
              addEllipses=TRUE, ellipse.level=0.85,
              title = "",
              palette = country_colors) + 
-  scale_shape_manual(values = country_shapes)
-
+  scale_shape_manual(values = country_shapes) +
+  theme(legend.position = "none")
+ggsave("figures/trop_24_PCA.png", height=3, width=3)
 
 
 ################################################################################
@@ -139,7 +140,9 @@ fviz_pca_ind(pca_diurnal_result,
              addEllipses=TRUE, ellipse.level=0.85,
              title = "",
              palette = country_colors) + 
-  scale_shape_manual(values = country_shapes)
+  scale_shape_manual(values = country_shapes) +
+  theme(legend.position = "none")
+ggsave("figures/trop_diurnal_PCA.png", height=3, width=3)
 
 
 # run nocturnal PCA --------------------------------------------------------------
@@ -163,7 +166,9 @@ fviz_pca_ind(pca_nocturnal_result,
              addEllipses=TRUE, ellipse.level=0.85,
              title = "",
              palette = country_colors) + 
-  scale_shape_manual(values = country_shapes)
+  scale_shape_manual(values = country_shapes)+
+  theme(legend.position = "none")
+ggsave("figures/trop_nocturnal_PCA.png", height=3, width=3)
 
 
 
@@ -263,7 +268,9 @@ fviz_pca_ind(pca_result,
              addEllipses=TRUE, ellipse.level=0.85,
              title = "",
              palette = country_colors) + 
-  scale_shape_manual(values = country_shapes)
+  scale_shape_manual(values = country_shapes)+
+  theme(legend.position = "none")
+ggsave("figures/trop_dawn_PCA.png", height=3, width=3)
 
 
 # run PCA sunset ---------------------------------------------------------------
@@ -284,7 +291,9 @@ fviz_pca_ind(pca_result,
              addEllipses=TRUE, ellipse.level=0.85,
              title = "",
              palette = country_colors) + 
-  scale_shape_manual(values = country_shapes)
+  scale_shape_manual(values = country_shapes) +
+  theme(legend.position = "none")
+ggsave("figures/trop_dusk_PCA.png", height=3, width=3)
 
 
 
