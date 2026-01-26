@@ -1,7 +1,7 @@
 
 # RGB panel plot
 # for soundscape baselines manuscript
-# last updated 5 Jan 2026
+# last updated 23 Jan 2026
 
 library(readr)
 library(ggplot2)
@@ -9,37 +9,36 @@ library(tidyr)
 library(dplyr)
 library(vroom)
 
-# set wd
-setwd("/Users/lauraberman/Library/CloudStorage/OneDrive-NationalUniversityofSingapore/Documents/Wisconsin/Sound Forest Lab/Soundscape Baselines/Soundscape_Baselines_GIT")
-
+# set wd - data directory
+setwd("/Users/lauraberman/Library/CloudStorage/OneDrive-NationalUniversityofSingapore/Documents/Wisconsin/Sound Forest Lab/Soundscape Baselines/SoundscapeBaselines_GIT_old/data")
 
 # load avgDay files ------------------------------------------------------------
-ACI_USA_avgDay <- readRDS("data/ACI_USA_avgDay_20240506_20240601.rds")
-ACI_Germany_avgDay <- read_rds("data/ACI_Germany_avgDay_20240501_20240530.rds")
-ACI_Ecuador_avgDay <- read_rds("data/ACI_Ecuador_avgDay_20231028_20231128.rds")
-ACI_Peru_avgDay <- read_rds("data/ACI_Peru_avgDay_20230518_20230617.rds")
-ACI_Gabon_avgDay <- read_rds("data/ACI_Gabon_avgDay_20221015_20221111.rds")
-ACI_SierraLeone_avgDay <- read_rds("data/ACI_SierraLeone_avgDay_20211212_20211225.rds")
-ACI_Brunei_avgDay <- read_rds("data/ACI_Brunei_avgDay20240101_20240201.rds")
-ACI_Singapore_avgDay <- read_rds("data/ACI_Singapore_avgDay_20200623_20200708.rds")
+ACI_USA_avgDay <- readRDS("ACI_Baraboo_avgDay_20240506_20240601.rds")
+ACI_Germany_avgDay <- read_rds("ACI_Germany_avgDay_20240501_20240530.rds")
+ACI_Ecuador_avgDay <- read_rds("ACI_Ecuador_avgDay_20231028_20231128.rds")
+ACI_Peru_avgDay <- read_rds("ACI_Peru_avgDay_20230518_20230617.rds")
+ACI_Gabon_avgDay <- read_rds("ACI_Gabon_avgDay_20221015_20221111.rds")
+ACI_SierraLeone_avgDay <- read_rds("ACI_SierraLeone_avgDay_20211212_20211225.rds")
+ACI_Brunei_avgDay <- read_rds("ACI_Brunei_avgDay20240101_20240201.rds")
+ACI_Singapore_avgDay <- read_rds("ACI_Singapore_avgDay_20200623_20200708.rds")
 
-EVN_USA_avgDay <- read_rds("data/EVN_USA_avgDay_20240506_20240601.rds")
-EVN_Germany_avgDay <- read_rds("data/EVN_Germany_avgDay_20240501_20240530.rds")
-EVN_Ecuador_avgDay <- read_rds("data/EVN_Ecuador_avgDay_20231028_20231128.rds")
-EVN_Peru_avgDay <- read_rds("data/EVN_Peru_avgDay_20230518_20230617.rds")
-EVN_Gabon_avgDay <- read_rds("data/EVN_Gabon_avgDay_20221015_20221111.rds")
-EVN_SierraLeone_avgDay <- read_rds("data/EVN_SierraLeone_avgDay_20211212_20211225.rds")
-EVN_Brunei_avgDay <- read_rds("data/EVN_Brunei_avgDay20240101_20240201.rds")
-EVN_Singapore_avgDay <- read_rds("data/EVN_Singapore_avgDay_20200623_20200708.rds")
+EVN_USA_avgDay <- read_rds("EVN_USA_avgDay_20240506_20240601.rds")
+EVN_Germany_avgDay <- read_rds("EVN_Germany_avgDay_20240501_20240530.rds")
+EVN_Ecuador_avgDay <- read_rds("EVN_Ecuador_avgDay_20231028_20231128.rds")
+EVN_Peru_avgDay <- read_rds("EVN_Peru_avgDay_20230518_20230617.rds")
+EVN_Gabon_avgDay <- read_rds("EVN_Gabon_avgDay_20221015_20221111.rds")
+EVN_SierraLeone_avgDay <- read_rds("EVN_SierraLeone_avgDay_20211212_20211225.rds")
+EVN_Brunei_avgDay <- read_rds("EVN_Brunei_avgDay20240101_20240201.rds")
+EVN_Singapore_avgDay <- read_rds("EVN_Singapore_avgDay_20200623_20200708.rds")
 
-ENT_USA_avgDay <- read_rds("data/ENT_USA_avgDay_20240506_20240601.rds")
-ENT_Germany_avgDay <- read_rds("data/ENT_Germany_avgDay_20240501_20240530.rds")
-ENT_Ecuador_avgDay <- read_rds("data/ENT_Ecuador_avgDay_20231028_20231128.rds")
-ENT_Peru_avgDay <- read_rds("data/ENT_Peru_avgDay_20230518_20230617.rds")
-ENT_Gabon_avgDay <- read_rds("data/ENT_Gabon_avgDay_20221015_20221111.rds")
-ENT_SierraLeone_avgDay <- read_rds("data/ENT_SierraLeone_avgDay_20211212_20211225.rds")
-ENT_Brunei_avgDay <- read_rds("data/ENT_Brunei_avgDay20240101_20240201.rds")
-ENT_Singapore_avgDay <- read_rds("data/ENT_Singapore_avgDay_20200623_20200708.rds")
+ENT_USA_avgDay <- read_rds("ENT_USA_avgDay_20240506_20240601.rds")
+ENT_Germany_avgDay <- read_rds("ENT_Germany_avgDay_20240501_20240530.rds")
+ENT_Ecuador_avgDay <- read_rds("ENT_Ecuador_avgDay_20231028_20231128.rds")
+ENT_Peru_avgDay <- read_rds("ENT_Peru_avgDay_20230518_20230617.rds")
+ENT_Gabon_avgDay <- read_rds("ENT_Gabon_avgDay_20221015_20221111.rds")
+ENT_SierraLeone_avgDay <- read_rds("ENT_SierraLeone_avgDay_20211212_20211225.rds")
+ENT_Brunei_avgDay <- read_rds("ENT_Brunei_avgDay20240101_20240201.rds")
+ENT_Singapore_avgDay <- read_rds("ENT_Singapore_avgDay_20200623_20200708.rds")
 
 
 # add Country column -----------------------------------------------------------
@@ -127,20 +126,30 @@ avgDay$rgb <- rgb((avgDay$avgACI-min(avgDay$avgACI)) / (max(avgDay$avgACI)-min(a
                   (avgDay$avgEVN-min(avgDay$avgEVN)) / (max(avgDay$avgEVN)-min(avgDay$avgEVN)), 
                   (avgDay$avgENT-min(avgDay$avgENT)) / (max(avgDay$avgENT)-min(avgDay$avgENT)))
 
-# write it
+
+# SAVE AND RELOAD --------------------------------------------------------------
+
+setwd("/Users/lauraberman/Library/CloudStorage/OneDrive-NationalUniversityofSingapore/Documents/Wisconsin/Sound Forest Lab/Soundscape Baselines/Soundscape_Baselines_GIT")
+
 #write_csv(avgDay, "avgDay_20250414.csv")
+
+#avgDay <- vroom("data/zenodo/avgDay_20250414.csv")
+
+#avgDay$Time <- as.POSIXct(substr(avgDay$Time, 12, 19), format= "%H:%M:%S")
+#avgDay$Time[is.na(avgDay$Time)] <- as.POSIXct("00:00:00", format= "%H:%M:%S")
 
 # plot it ----------------------------------------------------------------------
 ggplot(avgDay, aes(x=Time, y=frequency, fill=rgb)) +
   geom_raster() +
   facet_wrap(~Country, scales="free_x", ncol=4) +
   scale_fill_identity() +
-  scale_x_datetime(date_labels ="%H:%M") +
+  scale_x_datetime(date_labels ="%H:%M", breaks = as.POSIXct(c("2026-01-23 06:00:00 CST", "2026-01-23 12:00:00 CST", "2026-01-23 18:00:00 CST"))) +
+  scale_y_continuous(breaks = c(0,2,4,6,8,10)) +
   ylab("Frequency (kHz)") +
   xlab("Time (hours:minutes)") +
   theme_minimal()
-ggsave("/Users/lauraberman/Library/CloudStorage/OneDrive-NationalUniversityofSingapore/Documents/Wisconsin/Sound Forest Lab/Soundscape Baselines/Draft 2/RGB_panelplot_20250711.PDF", 
-       height=6, width=12)
+ggsave("figures/RGB_panelplot_20260126.PDF", 
+       height=5, width=10)
 
 
 
