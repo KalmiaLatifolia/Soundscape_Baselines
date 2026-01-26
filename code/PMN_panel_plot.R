@@ -1,13 +1,13 @@
 
 # PMN panel plot
 # for soundscape baselines manuscript
-# last updated 6 Jan 2026
+# last updated 26 Jan 2026
 
 library(readr)
 library(lubridate)
 
 # set wd -----------------------------------------------------------------------
-setwd("/Users/lauraberman/Library/CloudStorage/OneDrive-NationalUniversityofSingapore/Documents/Wisconsin/Sound Forest Lab/Soundscape Baselines/Soundscape_Baselines_GIT")
+setwd("/Users/lauraberman/Library/CloudStorage/OneDrive-NationalUniversityofSingapore/Documents/Wisconsin/Sound Forest Lab/Soundscape Baselines/SoundscapeBaselines_GIT_old")
 
 
 # load avgDay files ------------------------------------------------------------
@@ -62,11 +62,15 @@ ggplot(PMN_avgDay, aes(x=Time, y=frequency, fill=avgPMN)) +
   geom_raster() +
   facet_wrap(~Country, scales="free_x", ncol=4) +
   scale_fill_viridis_c() +
-  scale_x_datetime(date_labels ="%H:%M") +
+  scale_x_datetime(date_labels ="%H:%M", breaks = as.POSIXct(c("2026-01-26 06:00:00 CST", "2026-01-26 12:00:00 CST", "2026-01-26 18:00:00 CST"))) +
+  scale_y_continuous(breaks = c(0,2,4,6,8,10)) +
   ylab("Frequency (kHz)") +
   xlab("Time (hours:minutes)") +
   theme_minimal()
-ggsave("/Users/lauraberman/Library/CloudStorage/OneDrive-NationalUniversityofSingapore/Documents/Wisconsin/Sound Forest Lab/Soundscape Baselines/Draft 2/PMN_panelplot_20250711.PDF", 
-       height=6, width=12)
+
+setwd("/Users/lauraberman/Library/CloudStorage/OneDrive-NationalUniversityofSingapore/Documents/Wisconsin/Sound Forest Lab/Soundscape Baselines/Soundscape_Baselines_GIT")
+
+ggsave("figures/PMN_panelplot_20260126.PDF", 
+       height=5, width=10)
 
 
